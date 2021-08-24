@@ -1,0 +1,160 @@
+@font-face {
+    font-family: "Bebas Neue";
+    src: local("Bebas Neue"),
+        local("BebasNeue"),
+        url('../fonts/BebasNeue.woff2') format("woff2"),
+        url('../fonts/BebasNeue.woff') format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary: #635854;
+    --secondary: #3596F5;
+    --white: #ffffff;
+}
+
+.header {
+    padding: 12px 0;
+
+    background-color: var(--primary);
+    border-bottom: 4px solid var(--secondary);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1280px;
+    margin: auto;
+}
+
+.navbar__menu {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item {
+    margin: 0 40px;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar__contacts {
+    text-align: right;
+}
+
+.navbar__contacts--text {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+    line-height: 16px;
+
+    color: var(--white);
+}
+
+.navbar__contacts--phone {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+
+    text-decoration: none;
+    color: var(--white);
+}
+
+/* ------------------------- Section Hero ------------------------- */
+.hero {
+    display: flex;
+
+    max-width: 1280px;
+
+    margin: auto;
+    padding-top: 54px;
+}
+
+.home__image path {
+    opacity: 0;
+
+    transition: 0.1s ease;
+}
+
+.home__image path:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.hero__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    text-align: center;
+}
+
+.hero__title {
+    margin: 0;
+    
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 37px;
+    line-height: 44px;
+
+    color: var(--primary);
+}
+
+.counter__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter {
+    margin-top: 10px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 124px;
+
+    color: var(--primary);
+}
+
+.counter__button {
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
+}
+
+.counter__arrow--down {
+    transform: rotateX(180deg);
+}
+
+.button__primary {
+    padding: 16px 36px;
+
+    background-color: var(--secondary);
+    border-radius: 6px;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
