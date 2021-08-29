@@ -1,7 +1,6 @@
 @font-face {
     font-family: "Bebas Neue";
-    src: local("Bebas Neue"),
-        local("BebasNeue"),
+    src:
         url('../fonts/BebasNeue.woff2') format("woff2"),
         url('../fonts/BebasNeue.woff') format("woff");
     font-weight: normal;
@@ -21,6 +20,7 @@ body {
     --primary: #635854;
     --secondary: #3596F5;
     --white: #ffffff;
+    --black: #000000;
 }
 
 .header {
@@ -103,6 +103,10 @@ body {
     cursor: pointer;
 }
 
+path.current-floor {
+    opacity: 1;
+}
+
 .hero__info {
     display: flex;
     flex-direction: column;
@@ -130,7 +134,7 @@ body {
     align-items: center;
 }
 
-.counter {
+.floor__counter{
     margin-top: 10px;
 
     font-family: "Bebas Neue", sans-serif;
@@ -157,4 +161,136 @@ body {
     border: none;
     color: var(--white);
     cursor: pointer;
+}
+
+/* ------------------------- Modal ------------------------- */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.2s;
+}
+
+.is__open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal__dialog {
+    position: relative;
+
+    display: flex;
+    flex-grow: 1;
+
+    max-width: 1000px;
+    min-height: 565px;
+
+    background-color: var(--white);
+    transform: translateY(-10%);
+    transition: transform 0.2s, opacity 0.2s;
+    transition-delay:  0.2;
+    opacity: 0;
+}
+
+.is__open > .modal__dialog {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal__title {
+    margin-top: 0;
+    margin-bottom:  25px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: var(--black);
+}
+
+.modal__image {
+    width: 60%;
+
+    padding: 50px;
+
+    background-color: #EBEBEB;
+    text-align: center;
+}
+
+.modal__info {
+    width: 40%;
+
+    padding: 50px 46px;
+}
+
+.flat__list {
+    margin-top: 55px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.flat__item {
+    margin-bottom: 10px;
+}
+
+.flat__link {
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.flat__link:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+.modal__alert {
+    margin-top: 55px;
+
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--primary);
+}
+
+.modal__close--button {
+    position: absolute;
+    right: 27px;
+    top: 38px;
+
+    border: none;
+    cursor: pointer;
+    background-color: var(--white);
+}
+
+.flats path {
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+.flats path:hover {
+    opacity: 1;
+}
+
+.flat__active {
+    opacity: 1 !important;
 }
