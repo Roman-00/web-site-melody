@@ -290,3 +290,7 @@ path.current-floor {
 .flats path:hover {
     opacity: 1;
 }
+
+.flat__active {
+    opacity: 1 !important;
+}

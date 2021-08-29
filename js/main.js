@@ -2,7 +2,10 @@ $(document).ready(function () {
     
     // -------------------------------------------------- Получаем дата атрибут в svg
     let floorPath = $('.home__image path');
+    let flatPath = $('.flats path');
+    let flatsLink = $('.flat__link');
     let currentFloor = 2;
+    let currentFlats = 02;
     let counterUp = $('.counter__up');
     let counterDown = $('.counter__down');
     let modal = $('.modal');
@@ -17,6 +20,16 @@ $(document).ready(function () {
         $('.counter').text(currentFloor);
 
         floorPath.removeClass('current-floor');
+    });
+
+    flatsLink.on('mouseover', function () {
+
+        currentFlats = $(this).attr('data-flat-link');
+        let flatsPath = $(`.flats path[data-flat=${currentFlats}]`);
+
+        if (currentFlats !== flatsPath) {
+            flatPath.toggleClass('flat__active')
+        }
     });
 
     floorPath.on('click', toggleModal);
@@ -65,3 +78,24 @@ $(document).ready(function () {
     }
 
 });
+
+/*document.addEventListener('DOMContentLoaded', () => {
+
+    'use strict';
+
+    const flatsPath = document.querySelectorAll('.flats path'),
+        flatLink = document.querySelectorAll('.flat__link');
+
+    flatLink.forEach(el => {
+
+        el.addEventListener('mouseenter', (e) => {
+            let target = e.currentTarget;
+            let targetClass = target.getAttribute('data-flat-link');
+            let currentPath = document.querySelector(`.flats path[data-flat=${targetClass}]`);
+
+            console.log('currentPath', currentPath);
+        });
+
+    });
+
+});*/
